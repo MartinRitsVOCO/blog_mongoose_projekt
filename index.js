@@ -3,10 +3,15 @@ import config from "./config.js";
 import mongoose from "mongoose";
 const app = e();
 const PORT = config.port;
-mongoose
-    .connect(config.dbString)
-    .then(() => console.log("Connected to MongoDB"))
-    .catch((err) => console.error(err));
+import articleRouter from "./controllers/article.js";
+try {
+    await mongoose.connect(config.dbString);
+    console.log("Connected to MongoDB");
+}
+catch (error) {
+    console.error(error);
+}
+app.use("/article", articleRouter);
 app.get("/", (req, res) => {
     res.send("Hello World!");
 });
