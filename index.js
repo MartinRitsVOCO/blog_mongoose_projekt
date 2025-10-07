@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 const app = e();
 const PORT = config.port;
 import articleRouter from "./controllers/article.js";
+import commentRouter from "./controllers/comment.js";
 app.use(e.urlencoded({ extended: true }));
 app.use(e.json());
 try {
@@ -14,6 +15,7 @@ catch (error) {
     console.error(error);
 }
 app.use("/article", articleRouter);
+app.use("/comment", commentRouter);
 app.get("/", (req, res) => {
     res.send("Hello World!");
 });

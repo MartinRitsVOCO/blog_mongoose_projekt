@@ -6,6 +6,7 @@ const app: e.Express = e();
 const PORT = config.port;
 
 import articleRouter from "./controllers/article.js";
+import commentRouter from "./controllers/comment.js";
 
 app.use(e.urlencoded({ extended: true }));
 app.use(e.json());
@@ -18,6 +19,7 @@ try {
 }
 
 app.use("/article", articleRouter);
+app.use("/comment", commentRouter);
 
 app.get("/", (req: e.Request, res: e.Response) => {
   res.send("Hello World!");
