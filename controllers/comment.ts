@@ -6,7 +6,8 @@ const router: e.Router = e.Router();
 router.post("/", async (req: e.Request, res: e.Response) => {
   const comment = new Comment({
     date: new Date(),
-    content: req.body.content
+    content: req.body.content,
+    article: req.body.article
   });
   comment.save()
     .then(() => res.status(201).send(comment))
@@ -15,7 +16,7 @@ router.post("/", async (req: e.Request, res: e.Response) => {
 
 router.get("/", async (req: e.Request, res: e.Response) => {
   try {
-    const comments = await Comment.find();
+    const comments = await Comment.find().populate("article");
     res.status(200).send(comments);
   } catch (error) {
     res.status(500).send(error);
