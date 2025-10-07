@@ -5,6 +5,7 @@ const app = e();
 const PORT = config.port;
 import articleRouter from "./controllers/article.js";
 import commentRouter from "./controllers/comment.js";
+import autorRouter from "./controllers/autor.js";
 app.use(e.urlencoded({ extended: true }));
 app.use(e.json());
 try {
@@ -16,6 +17,7 @@ catch (error) {
 }
 app.use("/article", articleRouter);
 app.use("/comment", commentRouter);
+app.use("/autor", autorRouter);
 app.get("/", (req, res) => {
     res.send("Hello World!");
 });

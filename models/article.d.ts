@@ -3,14 +3,17 @@ declare const _default: mongoose.Model<{
     header: string;
     content: string;
     comments: mongoose.Types.ObjectId[];
+    author: mongoose.Types.ObjectId;
 }, {}, {}, {}, mongoose.Document<unknown, {}, {
     header: string;
     content: string;
     comments: mongoose.Types.ObjectId[];
+    author: mongoose.Types.ObjectId;
 }, {}, mongoose.DefaultSchemaOptions> & {
     header: string;
     content: string;
     comments: mongoose.Types.ObjectId[];
+    author: mongoose.Types.ObjectId;
 } & {
     _id: mongoose.Types.ObjectId;
 } & {
@@ -19,14 +22,17 @@ declare const _default: mongoose.Model<{
     header: string;
     content: string;
     comments: mongoose.Types.ObjectId[];
+    author: mongoose.Types.ObjectId;
 }, mongoose.Document<unknown, {}, mongoose.FlatRecord<{
     header: string;
     content: string;
     comments: mongoose.Types.ObjectId[];
+    author: mongoose.Types.ObjectId;
 }>, {}, mongoose.ResolveSchemaOptions<mongoose.DefaultSchemaOptions>> & mongoose.FlatRecord<{
     header: string;
     content: string;
     comments: mongoose.Types.ObjectId[];
+    author: mongoose.Types.ObjectId;
 }> & {
     _id: mongoose.Types.ObjectId;
 } & {
